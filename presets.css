@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --LightGrey: #FAFAFA;
+    --White: #FFFFFF;
+    --Grey: #DCDCDC;
+    --LightBlack: #1C1C1C;
+    --Black: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--Black);
+    color: var(--White);
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 4rem 4rem;
+}
+
+.menu a {
+    margin: 0.2rem;
+    position: relative;
+    text-decoration: none;
+}
+
+.menu a::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    /*изменить на right:0;, чтобы изменить направление подчёркивания */
+    width: 0;
+    /*задаём длинну линии до наведения курсора*/
+    height: 1px;
+    /*задаём ширину линии*/
+    background-color: var(--LightGrey);
+    /*задаём цвет линии*/
+    content: "";
+    transition: width 0.3s ease-out;
+    /*задаём время анимации*/
+}
+
+.menu a:hover::after,
+.menu a:focus::after {
+    width: 100%;
+}
+
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.button {
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 1.1rem;
+    grid-area: 16/3/18/9;
+    z-index: 2;
+    background-color: var(--White);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 300ms;
+}
+
+.button:hover {
+    background-color: var(--Grey);
+}
+
+.heading {
+    font-family: "Syne";
+    font-weight: 700;
+    line-height: 1.1em;
+    font-size: 2rem;
+}
+
+.paragraph {
+    font-family: "Source Sans 3";
+    font-weight: 200;
+    line-height: 1.3em;
+    letter-spacing: 0.02em;
+}
+
+a {
+    color: var(--White);
+    text-decoration: none;
+}
+
+footer {
+    border-top: 1px solid var(--White);
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 4rem;
+}
+
+.menu_footer a {
+    margin: 0.2rem;
+    position: relative;
+    text-decoration: none;
+}
+
+.menu_footer a::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    /*изменить на right:0;, чтобы изменить направление подчёркивания */
+    width: 0;
+    /*задаём длинну линии до наведения курсора*/
+    height: 1px;
+    /*задаём ширину линии*/
+    background-color: var(--LightGrey);
+    /*задаём цвет линии*/
+    content: "";
+    transition: width 0.3s ease-out;
+    /*задаём время анимации*/
+}
+
+.menu_footer a:hover::after,
+.menu_footer a:focus::after {
+    width: 100%;
+}
+
+section {
+    --grid-gutter: calc(var(--sqs-mobile-site-gutter, 6vw) - 0.0px);
+    --cell-max-width: calc((var(--sqs-site-max-width, 1500px) - (0.0px * (8 - 1))) / 8);
+    display: grid;
+    position: relative;
+    grid-area: 1/1/-1/-1;
+    grid-template-rows: repeat(25, minmax(24px, auto));
+    grid-template-columns: minmax(var(--grid-gutter), 1fr) repeat(8, minmax(0, var(--cell-max-width))) minmax(var(--grid-gutter), 1fr);
+    row-gap: 0.0px;
+    column-gap: 0.0px;
+}
+
+section p {
+    grid-area: 10/2/16/10;
+    z-index: 4;
+}
+
+.I {
+    grid-area: 3/2/12/5;
+    z-index: 3;
+}
+
+.II {
+    grid-area: 4/8/9/10;
+    z-index: 5;
+}
+
+.III {
+    grid-area: 17/5/24/10;
+    z-index: 1;
+}
+
+.text {
+    grid-area: 24/2/26/10;
+    z-index: 6;
+    text-align: center;
+    margin: 4rem 0;
+}
+
+.text > * {
+    margin: 1rem 0;
+}
+
+ul li {
+    list-style-position: inside;
+}
+
+@media (min-width: 768px) {
+    section {
+        --grid-gutter: calc(var(--sqs-site-gutter, 4vw) - 0.0px);
+        --cell-max-width: calc((var(--sqs-site-max-width, 1500px) - (0.0px * (24 - 1))) / 24);
+        --inset-padding: 0vw;
+        --row-height-scaling-factor: 0.0215;
+        --container-width: min(var(--sqs-site-max-width, 1500px), calc(100vw - var(--sqs-site-gutter, 4vw) * 2 - var(--inset-padding)));
+        grid-template-rows: repeat(41, minmax(calc(var(--container-width) * var(--row-height-scaling-factor)), auto));
+        grid-template-columns: minmax(var(--grid-gutter), 1fr) repeat(24, minmax(0, var(--cell-max-width))) minmax(var(--grid-gutter), 1fr);
+    }
+
+    section p {
+        grid-area: 9/8/14/20;
+        z-index: 2;
+    }
+
+    .I {
+        grid-area: 8/3/22/8;
+        z-index: 5;
+    }
+
+    .II {
+        grid-area: 4/19/13/23;
+        z-index: 1;
+    }
+
+    .III {
+        grid-area: 16/15/25/22;
+        z-index: 3;
+    }
+
+    .button {
+        grid-area: 15/10/17/18;
+        z-index: 4;
+    }
+
+    .text {
+        grid-area: 28/3/42/23;
+        z-index: 6;
+        margin: 0 0 6rem 0;
+    }
+}
