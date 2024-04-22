@@ -28,6 +28,12 @@ nav {
     margin: 1.5rem;
 }
 
+.menu, .menu_footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .menu a {
     margin: 0.2rem;
     position: relative;
@@ -60,7 +66,7 @@ button {
     font-family: "Syne";
     font-weight: 700;
     line-height: 1.1em;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .paragraph {
@@ -131,7 +137,7 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 6rem;
+    margin: 4rem;
 }
 
 .info p:first-child {
@@ -333,7 +339,8 @@ a {
     grid-template-columns: minmax(var(--grid-gutter), 1fr) repeat(8, minmax(0, var(--cell-max-width))) minmax(var(--grid-gutter), 1fr);
     row-gap: 20.0px;
     column-gap: 10.0px;
-    padding: 6rem 0;
+    margin-top: 6rem;
+    margin-bottom: -3rem;
 }
 
 .interior img {
@@ -399,6 +406,7 @@ footer {
         --container-width: min(var(--sqs-site-max-width, 1500px), calc(100vw - var(--sqs-site-gutter, 4vw) * 2 - var(--inset-padding)));
         grid-template-rows: repeat(51, minmax(calc(var(--container-width) * var(--row-height-scaling-factor)), auto));
         grid-template-columns: minmax(var(--grid-gutter), 1fr) repeat(24, minmax(0, var(--cell-max-width))) minmax(var(--grid-gutter), 1fr);
+        
     }
 
     .firstp {
@@ -503,6 +511,7 @@ footer {
         --container-width: min(var(--sqs-site-max-width, 1500px), calc(100vw - var(--sqs-site-gutter, 4vw) * 2 - var(--inset-padding)));
         grid-template-rows: repeat(13, minmax(calc(var(--container-width) * var(--row-height-scaling-factor)), auto));
         grid-template-columns: minmax(var(--grid-gutter), 1fr) repeat(24, minmax(0, var(--cell-max-width))) minmax(var(--grid-gutter), 1fr);
+        margin: 6rem 0;
     }
 
     .interior img {
@@ -519,11 +528,25 @@ footer {
         font-size: 2rem;
     }
 
+    .info {
+        margin: 6rem;
+    }
+
     .carousel {
         padding-top: 0;
     }
 
     .group .row span {
         font-size: 5rem;
+    }
+
+    .menu, .menu_footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .heading {
+        font-size: 2.2rem;
     }
 }
