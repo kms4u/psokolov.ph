@@ -25,9 +25,14 @@ nav {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin: 4rem 4rem;
+    margin: 1.5rem;
 }
 
+.menu, .menu_footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .menu a {
     margin: 0.2rem;
     position: relative;
@@ -84,7 +89,8 @@ button {
     font-family: "Syne";
     font-weight: 700;
     line-height: 1.1em;
-    font-size: 2rem;
+    font-size: 1.2rem;
+
 }
 
 .paragraph {
@@ -108,7 +114,7 @@ footer {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin: 4rem;
+    margin: 1.5rem;
 }
 
 .menu_footer a {
@@ -155,13 +161,19 @@ section p {
     z-index: 4;
 }
 
+.title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
 .I {
     grid-area: 3/2/12/5;
     z-index: 3;
 }
 
 .II {
-    grid-area: 4/8/9/10;
+    grid-area: 4/7/9/10;
     z-index: 5;
 }
 
@@ -177,7 +189,7 @@ section p {
     margin: 4rem 0;
 }
 
-.text > * {
+.text>* {
     margin: 1rem 0;
 }
 
@@ -225,5 +237,31 @@ ul li {
         grid-area: 28/3/42/23;
         z-index: 6;
         margin: 0 0 6rem 0;
+    }
+
+    .menu,
+    .menu_footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .heading {
+        font-size: 2.2rem;
+    }
+
+    .title {
+        font-size: 4.5rem;
+        margin-bottom: 0rem;
+        text-align: center;
+    }
+
+    nav {
+        margin: 4rem 4rem;
+
+    }
+
+    .footer {
+        margin: 4rem;
     }
 }
